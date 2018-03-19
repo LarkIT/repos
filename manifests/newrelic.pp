@@ -8,6 +8,6 @@ class repos::newrelic {
     baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/newrelic/el5",
     gpgcheck => '1',
     enabled  => '1',
-    gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/RPM-GPG-KEY-NewRelic",
+    gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/${profile::pulp_client::gpg_uri}/RPM-GPG-KEY-NewRelic",
   }
 }

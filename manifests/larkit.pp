@@ -8,6 +8,6 @@ class repos::larkit {
     baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/larkit/${::operatingsystemmajrelease}/${::architecture}",
     gpgcheck => '1',
     enabled  => '1',
-    gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/LARK-RPM-GPG-KEY",
+    gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/${profile::pulp_client::gpg_uri}/LARK-RPM-GPG-KEY",
   }
 }
