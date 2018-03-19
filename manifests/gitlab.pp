@@ -7,9 +7,9 @@
 class repos::gitlab {
   yumrepo { 'gitlab':
     descr    => 'Official repository for Gitlab',
-    baseurl  => '${profile::pulp_client::server_protocol}://packages.gitlab.com/gitlab/gitlab-ce/el/$releasever/$basearch/',
+    baseurl  => "${profile::pulp_client::server_protocol}://packages.gitlab.com/gitlab/gitlab-ce/el/$releasever/$basearch/",
     gpgcheck => '0',
     enabled  => '1',
-    gpgkey   => '${profile::pulp_client::server_protocol}://packages.gitlab.com/gpg.key',
+    gpgkey   => "${profile::pulp_client::server_protocol}://packages.gitlab.com/gpg.key",
   }
 }
