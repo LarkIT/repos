@@ -10,6 +10,6 @@ class repos::remi_php70 {
     baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/centos/${::operatingsystemmajrelease}/remi/php70/${::architecture}",
     gpgcheck => '1',
     enabled  => '1',
-    gpgkey   => '${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/RPM-GPG-KEY-remi',
+    gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/RPM-GPG-KEY-remi",
   }
 }
