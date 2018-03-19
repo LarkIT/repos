@@ -8,6 +8,6 @@ class repos::epel {
     baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/epel/${::operatingsystemmajrelease}/${::architecture}",
     gpgcheck => '1',
     enabled  => '1',
-    gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/rpm-gpg/RPM-GPG-KEY-EPEL-${::operatingsystemmajrelease}",
+    gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/${profile::pulp_client::gpg_uri}/RPM-GPG-KEY-EPEL-${::operatingsystemmajrelease}",
   }
 }

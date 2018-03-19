@@ -9,7 +9,7 @@ class repos::puppetlabs_pc1 {
     gpgcheck => '1',
     enabled  => '1',
     gpgkey   => [
-      "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/rpm-gpg/RPM-GPG-KEY-puppetlabs-PC1",          "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/rpm-gpg/RPM-GPG-KEY-puppet-PC1",
+      "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/${profile::pulp_client::gpg_uri}/RPM-GPG-KEY-puppetlabs-PC1",          "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/${profile::pulp_client::gpg_uri}/RPM-GPG-KEY-puppet-PC1",
     ]
   }
 }

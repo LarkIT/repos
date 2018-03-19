@@ -8,6 +8,6 @@ class repos::pgsql96 {
     baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/postgres/9.6/rhel-${::operatingsystemmajrelease}-${::architecture}",
     gpgcheck => '1',
     enabled  => '1',
-    gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/rpm-gpg/RPM-GPG-KEY-PGDG-96",
+    gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/${profile::pulp_client::gpg_uri}/RPM-GPG-KEY-PGDG-96",
   }
 }
