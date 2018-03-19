@@ -7,9 +7,9 @@ class repos::remi_php70 {
 
   yum::repo { "centos${::operatingsystemmajrelease}-${::architecture}-remi-php70":
     descr    => "CentOS ${::operatingsystemmajrelease} ${::architecture} - REMI PHP 7.0",
-    baseurl  => "https://pulp.lark-it.com/pulp/repos/centos/${::operatingsystemmajrelease}/remi/php70/${::architecture}",
+    baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/centos/${::operatingsystemmajrelease}/remi/php70/${::architecture}",
     gpgcheck => '1',
     enabled  => '1',
-    gpgkey   => 'https://pulp.lark-it.com/pulp/static/RPM-GPG-KEY-remi',
+    gpgkey   => '${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/RPM-GPG-KEY-remi',
   }
 }

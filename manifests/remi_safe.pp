@@ -7,9 +7,9 @@ class repos::remi_safe {
 
   yum::repo { "centos${::operatingsystemmajrelease}-${::architecture}-remi-safe":
     descr    => "CentOS ${::operatingsystemmajrelease} ${::architecture} - REMI SAFE",
-    baseurl  => "https://pulp.lark-it.com/pulp/repos/centos/${::operatingsystemmajrelease}/remi/safe/${::architecture}",
+    baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/centos/${::operatingsystemmajrelease}/remi/safe/${::architecture}",
     gpgcheck => '1',
     enabled  => '1',
-    gpgkey   => 'https://pulp.lark-it.com/pulp/static/RPM-GPG-KEY-remi',
+    gpgkey   => '${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/RPM-GPG-KEY-remi',
   }
 }

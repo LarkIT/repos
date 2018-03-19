@@ -5,9 +5,9 @@
 class repos::scl {
   yum::repo { "centos${::operatingsystemmajrelease}-${::architecture}-scl":
     descr    => "CentOS ${::operatingsystemmajrelease} ${::architecture} - SCL",
-    baseurl  => "https://pulp.lark-it.com/pulp/repos/centos/${::operatingsystemmajrelease}/scl/${::architecture}",
+    baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/centos/${::operatingsystemmajrelease}/scl/${::architecture}",
     gpgcheck => '1',
     enabled  => '1',
-    gpgkey   => "https://pulp.lark-it.com/pulp/static/RPM-GPG-KEY-CentOS-Testing-${::operatingsystemmajrelease}",
+    gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/RPM-GPG-KEY-CentOS-Testing-${::operatingsystemmajrelease}",
   }
 }
