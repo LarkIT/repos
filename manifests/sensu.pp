@@ -5,7 +5,7 @@
 class repos::sensu {
   yum::repo { 'sensu-official':
     descr    => 'Sensu',
-    baseurl  => "https://pulp.lark-it.com/pulp/repos/sensu/${::architecture}",
+    baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/sensu/${::architecture}",
     gpgcheck => '0',
     enabled  => '1',
   }

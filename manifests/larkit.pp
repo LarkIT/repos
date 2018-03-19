@@ -5,9 +5,9 @@
 class repos::larkit {
   yum::repo { 'larkit':
     descr    => 'LarkIT',
-    baseurl  => "https://pulp.lark-it.com/pulp/repos/larkit/${::operatingsystemmajrelease}/${::architecture}",
+    baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/larkit/${::operatingsystemmajrelease}/${::architecture}",
     gpgcheck => '1',
     enabled  => '1',
-    gpgkey   => 'https://pulp.lark-it.com/pulp/static/LARK-RPM-GPG-KEY',
+    gpgkey   => '${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/LARK-RPM-GPG-KEY',
   }
 }

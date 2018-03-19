@@ -5,9 +5,9 @@
 class repos::ius_archive {
   yum::repo { "centos${::operatingsystemmajrelease}-${::architecture}-ius-archive":
     descr    => "CentOS ${::operatingsystemmajrelease} ${::architecture} - IUS Archive",
-    baseurl  => "https://pulp.lark-it.com/pulp/repos/ius/archive/${::operatingsystemmajrelease}/${::architecture}",
+    baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/ius/archive/${::operatingsystemmajrelease}/${::architecture}",
     gpgcheck => '1',
     enabled  => '1',
-    gpgkey   => 'https://pulp.lark-it.com/pulp/static/IUS-COMMUNITY-GPG-KEY',
+    gpgkey   => '${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/IUS-COMMUNITY-GPG-KEY',
   }
 }

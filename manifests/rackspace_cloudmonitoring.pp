@@ -7,7 +7,7 @@ class repos::rackspace_cloudmonitoring (
 ) {
   yum::repo { "centos${::operatingsystemmajrelease}-${::architecture}-rackspace_cloudmonitoring":
     descr   => "CentOS ${::operatingsystemmajrelease} ${::architecture} - Rackspace Cloud Monitoring",
-    baseurl => "http://${pkghost}/centos-${::operatingsystemmajrelease}-${::architecture}/",
+    baseurl => "${profile::pulp_client::server_protocol}://${pkghost}/centos-${::operatingsystemmajrelease}-${::architecture}/",
     enabled => '1',
   }
 

@@ -7,7 +7,7 @@
 class repos::centos {
   yumrepo { "centos-${::operatingsystemmajrelease}-${::architecture}-base":
     descr    => "CentOS ${::operatingsystemmajrelease} ${::architecture} - Base",
-    baseurl  => "http://${profile::pulp_client::server_name}/pulp/repos/centos/${::operatingsystemmajrelease}/os/${::architecture}",
+    baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/centos/${::operatingsystemmajrelease}/os/${::architecture}",
     gpgcheck => '1',
     enabled  => '1',
     gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/rpm-gpg/RPM-GPG-KEY-CentOS-${::operatingsystemmajrelease}",
@@ -15,7 +15,7 @@ class repos::centos {
 
   yumrepo { "centos-${::operatingsystemmajrelease}-${::architecture}-updates":
     descr    => "CentOS ${::operatingsystemmajrelease} ${::architecture} - Updates",
-    baseurl  => "http://${profile::pulp_client::server_name}/pulp/repos/centos/${::operatingsystemmajrelease}/updates/${::architecture}",
+    baseurl  => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/repos/centos/${::operatingsystemmajrelease}/updates/${::architecture}",
     gpgcheck => '1',
     enabled  => '1',
     gpgkey   => "${profile::pulp_client::server_protocol}://${profile::pulp_client::server_name}/pulp/static/rpm-gpg/RPM-GPG-KEY-CentOS-${::operatingsystemmajrelease}",

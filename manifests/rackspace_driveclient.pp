@@ -7,9 +7,9 @@ class repos::rackspace_driveclient (
 ) {
   yum::repo { 'drivesrvr':
     descr    => "CentOS ${::operatingsystemmajrelease} ${::architecture} - Rackspace Drive Client",
-    baseurl  => "http://${pkghost}/redhat/",
+    baseurl  => "${profile::pulp_client::server_protocol}://${pkghost}/redhat/",
     gpgcheck => '1',
-    gpgkey   => "http://${pkghost}/redhat/RPM-GPG-KEY-driveclient",
+    gpgkey   => "${profile::pulp_client::server_protocol}://${pkghost}/redhat/RPM-GPG-KEY-driveclient",
     enabled  => '1',
   }
 
